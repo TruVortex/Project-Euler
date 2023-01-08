@@ -15,7 +15,7 @@ int length(int n) {
     return 11;
 }
 
-int main(){
+int main() {
     int ans = 0;
     for (int i = 1; i <= 1000; i++) {
         ans += length(i);

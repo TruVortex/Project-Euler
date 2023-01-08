@@ -21,7 +21,7 @@ vector<vector<int>> triangle = {
     { 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23}
 };
 
-int main(){
+int main() {
     for (int i = 0; i < 15; i++) {
         dp[14][i] = triangle[14][i];
     }

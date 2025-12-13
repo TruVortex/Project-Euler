@@ -4,11 +4,10 @@ for i in range(2, 1000002):
         primes.append(i)
         for j in range(i * i, 1000002, i):
             is_prime[j] = False
-primes_s = set(primes)
 for i in range(1, len(primes)):
     primes[i] += primes[i - 1]
 for i in range(len(primes)):
     for j in range(i - ans[1]):
-        if primes[i] - primes[j] in primes_s and i - j + 1 > ans[1]:
+        if primes[i] - primes[j] < 1000000 and is_prime[primes[i] - primes[j]] and i - j + 1 > ans[1]:
             ans = (primes[i] - primes[j], i - j + 1)
 print(ans[0])

@@ -1,12 +1,9 @@
-ans, prime_divisors = (-1, float('inf')), [[] for i in range(10000000)]
+ans, totient = (-1, float('inf')), list(range(10000000))
 for i in range(2, 10000000):
-    if not prime_divisors[i]:
+    if totient[i] == i:
         for j in range(i, 10000000, i):
-            prime_divisors[j].append(i)
-    totient = i
-    for prime in prime_divisors[i]:
-        totient *= (prime - 1)
-        totient //= prime
-    if sorted(str(totient)) == sorted(str(i)) and i / totient < ans[1]:
-        ans = (i, i / totient)
+            totient[j] *= i - 1
+            totient[j] //= i
+    if sorted(str(totient[i])) == sorted(str(i)) and i / totient[i] < ans[1]:
+        ans = (i, i / totient[i])
 print(ans[0])

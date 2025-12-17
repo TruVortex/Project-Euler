@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 ans, vertices_in, pos_nums = '', defaultdict(set), set()
-for line in open('input', 'r'):
+for line in open('keylog.txt', 'r'):
     vertices_in[line[1]].add(line[0])
     vertices_in[line[2]] |= set(line[:2])
     pos_nums |= set(line[:3])
